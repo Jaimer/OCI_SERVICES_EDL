@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCI_PA</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $.getJSON('https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json', function(data) {
+        // JSON result is available in the 'data' variable
+        data.regions.forEach(region => {
+            region.cidrs.forEach(cidrs => {
+                console.log(cidrs.cidr)
+                $("body").append(cidrs.cidr+'<br>')
+            });
+        });
+    });
+    </script>
+</body>
+</html>
