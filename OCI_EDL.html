@@ -12,7 +12,7 @@
         // JSON result is available in the 'data' variable
         data.regions.forEach(region => {
             region.cidrs.forEach(cidrs => {
-                console.log(cidrs.cidr)
+                //console.log(cidrs.cidr)
                 $("body").append(cidrs.cidr+'<br>')
             });
         });
